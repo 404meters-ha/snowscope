@@ -1,0 +1,38 @@
+# 密钥与本地配置——绝不提交
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# 数据与构建产物
+*.db
+*.db-shm
+*.db-wal
+frontend/node_modules/
+frontend/dist/
+courses/
+
+# 上传落盘（教材 PDF / 教程包解压目录）
+uploads/
+
+# vendored cc-mini 的运行时状态（技能缓存等，可再生）
+.cc-mini/
+
+# 课程发布目录（LOCAL_PUBLISH_DIR 的落盘产物，可随时重新发布）
+published/
+
+# IDE
+.idea/
+
+# Claude 本地配置（自研技能会入库；bmad 是安装器生成的第三方套件，可重装再生，不入库）
+.claude/settings.local.json
+.claude/skills/bmad-*/
+_bmad/
+
+# 临时研究工作区（issue/PR 调研脚本与中间产物）
+.research-*/
+
+scaffolds/
+doc/scaffold/*.log

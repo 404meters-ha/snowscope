@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{lesson_title} · {course_title}</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <main>
+    <header class="course-header">
+      <div class="course-kicker">{course_title} · 第 {n} 课 / 共 {total} 课</div>
+      <h1>{lesson_title}</h1>
+      <p class="lesson-meta">{repo_full_name} · issue #{number} · 本章收获：{一句话收获}</p>
+    </header>
+
+    <!-- 正文：短课，单一收获。引用规范：关键论断给出来源链接。代码路径给 GitHub 深链。 -->
+    <h2>{小节标题}</h2>
+    <p>…</p>
+
+    <pre><code>// 真实代码路径（附 GitHub 链接），不要贴凭记忆写的代码
+</code></pre>
+
+    <blockquote>可选：值得记住的一句洞察</blockquote>
+
+    <p>有不清楚的地方，随时回到 Claude Code 追问——这门课的「老师」就是生成它的 /tech 会话。</p>
+
+    <!-- 随堂检测：结构契约。spec 由 /tech 生成，course_id 写死。3–5 题，单选/多选/判断。 -->
+    <div id="quiz"></div>
+    <script id="quiz-spec" type="application/json">
+    {
+      "course_id": 0,
+      "lesson_id": "00-example",
+      "title": "随堂检测",
+      "questions": [
+        {"type": "single", "question": "…", "options": ["…", "…", "…", "…"], "answer": [0], "explain": "…"},
+        {"type": "multi", "question": "…", "options": ["…", "…", "…"], "answer": [0, 2], "explain": "…"},
+        {"type": "judge", "question": "…", "options": ["正确", "错误"], "answer": [0], "explain": "…"}
+      ]
+    }
+    </script>
+    <script src="assets/quiz.js"></script>
+
+    <nav class="lesson-nav">
+      <a href="{prev_file}">← 上一课</a>
+      <a href="index.html">课程目录</a>
+      <a href="{next_file}">下一课 →</a>
+    </nav>
+  </main>
+</body>
+</html>

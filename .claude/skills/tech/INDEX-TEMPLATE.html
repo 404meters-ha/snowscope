@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{course_title}</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <main class="course-home">
+    <header class="course-header">
+      <div class="course-kicker">celestial-snow 学习闭环</div>
+      <h1>{course_title}</h1>
+      <p class="lesson-meta">{repo_full_name} · issue #{number} · 三章 {total} 课 · 中文</p>
+    </header>
+
+    <p><b>使命</b>：彻底理解 {repo_full_name}，吃透 issue #{number}。</p>
+
+    <!-- 学习进度：动态拉取自平台（quiz 已提交的课会打勾） -->
+    <div id="course-progress"></div>
+    <script>window.COURSE_ID = 0;</script>
+    <script src="assets/quiz.js"></script>
+
+    <h2>课程目录</h2>
+    <!-- 三章结构：① 项目导览 ② 核心代码路径 ③ issue 实战。每章 1–3 课，共 3–9 课。 -->
+    <h3>第一章 · 项目导览</h3>
+    <ul>
+      <li><a href="01-overview.html">01 …</a></li>
+    </ul>
+    <h3>第二章 · 核心代码路径</h3>
+    <ul>
+      <li><a href="02-core-path.html">02 …</a></li>
+    </ul>
+    <h3>第三章 · issue 实战</h3>
+    <ul>
+      <li><a href="03-issue.html">03 …</a></li>
+    </ul>
+
+    <hr>
+    <p class="lesson-meta">参考资料见 <a href="RESOURCES.md">RESOURCES.md</a> · 术语表见 reference/ · 学习记录见 learning-records/</p>
+  </main>
+</body>
+</html>

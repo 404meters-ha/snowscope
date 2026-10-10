@@ -1,0 +1,125 @@
+/* celestial-snow 学习闭环 · 共享课程样式（/tech 生成课程时原样拷入 courses/{id}/assets/）
+ * Tufte 风格：衬线正文、宽边距、克制的强调色。课程页与首页共用。 */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #fffff8;
+  color: #111;
+  font-family: 'et-book', Palatino, 'Palatino Linotype', Georgia, 'Microsoft YaHei', serif;
+  font-size: 19px;
+  line-height: 1.65;
+}
+
+main, .course-home {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+}
+
+h1, h2, h3 { font-weight: 400; line-height: 1.25; }
+h1 { font-size: 2rem; margin: 0 0 .4em; }
+h2 { font-size: 1.45rem; margin: 2em 0 .5em; }
+h3 { font-size: 1.15rem; margin: 1.6em 0 .4em; }
+
+p { margin: 0 0 1em; }
+
+a { color: #a0522d; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+code, pre {
+  font-family: Consolas, 'SFMono-Regular', Menlo, monospace;
+  font-size: .78em;
+  background: #f6f3ea;
+  border-radius: 3px;
+}
+code { padding: .1em .3em; }
+pre {
+  padding: .9em 1.1em;
+  overflow-x: auto;
+  line-height: 1.45;
+  border-left: 3px solid #d8d2bf;
+}
+pre code { padding: 0; background: none; }
+
+blockquote {
+  margin: 1.2em 0;
+  padding: .2em 1.2em;
+  border-left: 3px solid #b8d0d8;
+  color: #4a5a60;
+  font-style: italic;
+}
+
+hr { border: none; border-top: 1px solid #e3ddca; margin: 2.5em 0; }
+
+/* —— 页眉 / 课程首页 —— */
+.course-header { border-bottom: 1px solid #e3ddca; padding-bottom: 1em; margin-bottom: 2em; }
+.course-kicker { color: #8a7f5c; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; }
+.lesson-meta, .repo-attr { color: #7a7256; font-size: .85rem; }
+
+.lesson-nav {
+  display: flex; justify-content: space-between; gap: 1em;
+  margin-top: 3.5em; padding-top: 1em; border-top: 1px solid #e3ddca; font-size: .9rem;
+}
+
+/* —— 首页进度（quiz.js 渲染） —— */
+.cp-summary { font-size: 1rem; color: #4a5a60; }
+.cp-list { padding-left: 1.2em; }
+.cp-list li { margin: .45em 0; }
+.cp-state { color: #7a7256; font-size: .85rem; margin-left: .8em; }
+.cp-done a { color: #3a6b35; }
+.cp-loading { color: #8a7f5c; font-style: italic; }
+
+/* —— 随堂检测（quiz.js 渲染） —— */
+.quiz-box {
+  border: 1px solid #d8d2bf;
+  border-radius: 6px;
+  padding: 1.2em 1.5em 1.4em;
+  margin: 3em 0 1em;
+  background: #fbf8ef;
+}
+.quiz-box legend {
+  padding: 0 .5em;
+  font-size: 1.05rem;
+  color: #8a7f5c;
+  letter-spacing: .06em;
+}
+.quiz-q { margin: 1.1em 0; }
+.quiz-q-title { margin-bottom: .45em; }
+.quiz-tag {
+  display: inline-block;
+  font-size: .68rem;
+  color: #7a6f45;
+  border: 1px solid #d8d2bf;
+  border-radius: 3px;
+  padding: 0 .4em;
+  margin-right: .6em;
+  vertical-align: 2px;
+}
+.quiz-opt { display: block; margin: .3em 0; cursor: pointer; font-size: .95rem; }
+.quiz-opt input { margin-right: .5em; }
+.quiz-fb { margin: .5em 0 0 1.6em; font-size: .88rem; }
+.quiz-right > .quiz-q-title { color: #2f6b2a; }
+.quiz-wrong > .quiz-q-title { color: #9c2f2f; }
+.quiz-actions { margin-top: 1.4em; display: flex; align-items: center; gap: 1em; }
+.quiz-actions button {
+  font: inherit; font-size: .9rem;
+  padding: .35em 1.2em;
+  border: 1px solid #a0522d;
+  border-radius: 4px;
+  background: none;
+  color: #a0522d;
+  cursor: pointer;
+}
+.quiz-actions button:hover { background: #a0522d; color: #fffff8; }
+.quiz-actions button:disabled { opacity: .45; cursor: default; }
+.quiz-actions button:disabled:hover { background: none; color: #a0522d; }
+.quiz-status { font-size: .88rem; color: #4a5a60; }
+
+/* —— 打印友好 —— */
+@media print {
+  body { background: #fff; font-size: 12pt; }
+  .quiz-actions, .lesson-nav { display: none; }
+  .quiz-box { border-color: #999; background: #fff; }
+}
